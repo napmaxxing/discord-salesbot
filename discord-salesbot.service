@@ -1,0 +1,15 @@
+[Unit]
+Description=Discord NFT Sales Bot
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=salesbot
+WorkingDirectory=/opt/discord-salesbot
+ExecStart=/usr/bin/pnpm start
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
